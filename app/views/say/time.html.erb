@@ -1,0 +1,114 @@
+<%
+	timeHonolulu = Time.now.in_time_zone('Hawaii')
+	timeVancouver = Time.now.in_time_zone('Pacific Time (US & Canada)')
+	timeOttawa = Time.now.in_time_zone('Eastern Time (US & Canada)')
+	timeParis = Time.now.in_time_zone('Paris')
+	timeTokyo = Time.now.in_time_zone('Tokyo')
+	timeSydney = Time.now.in_time_zone('Sydney')
+%>
+
+<div class="clock">
+	<canvas width="200" height="200" id="clockHonolulu">
+		<p>Browsers that do not support the canvas element will show this text.</p>
+	</canvas>
+	<p id="honolulu">Honolulu <span class="time"><%= timeHonolulu.to_s(:time) %></span></p>
+</div>
+
+<div class="clock">
+	<canvas width="200" height="200" id="clockVancouver">
+		<p>Browsers that do not support the canvas element will show this text.</p>
+	</canvas>
+	<p id="vancouver">Vancouver <span class="time"><%= timeVancouver.to_s(:time) %></span></p>
+</div>
+
+<div class="clock">
+	<canvas width="200" height="200" id="clockOttawa">
+		<p>Browsers that do not support the canvas element will show this text.</p>
+	</canvas>
+	<p id="ottawa">Ottawa <span class="time"><%= timeOttawa.to_s(:time) %></span></p>
+</div>
+
+<div class="clock">
+	<canvas width="200" height="200" id="clockParis">
+		<p>Browsers that do not support the canvas element will show this text.</p>
+	</canvas>
+	<p id="paris">Paris <span class="time"><%= timeParis.to_s(:time) %></span></p>
+</div>
+
+<div class="clock">
+	<canvas width="200" height="200" id="clockTokyo">
+		<p>Browsers that do not support the canvas element will show this text.</p>
+	</canvas>
+	<p id="tokyo">Tokyo <span class="time"><%= timeTokyo.to_s(:time) %></span></p>
+</div>
+
+<div class="clock">
+	<canvas width="200" height="200" id="clockSydney">
+		<p>Browsers that do not support the canvas element will show this text.</p>
+	</canvas>
+	<p id="sydney">Sydney <span class="time"><%= timeSydney.to_s(:time) %></span></p>
+</div>
+
+<script type="text/javascript">
+  window.onload = function() {
+    try {
+      startClock('clockHonolulu', {
+      	startTime: <%= timeHonolulu.seconds_since_midnight.ceil %>,
+      	tz: 0
+      });
+    } catch(e) {
+      // in Internet Explorer there is no canvas!
+      document.getElementById('myCanvasContainer').style.display = 'none';
+    }
+
+    try {
+      startClock('clockVancouver', {
+      	startTime: <%= timeVancouver.seconds_since_midnight.ceil %>,
+      	tz: 0
+      });
+    } catch(e) {
+      // in Internet Explorer there is no canvas!
+      document.getElementById('myCanvasContainer').style.display = 'none';
+    }
+
+    try {
+      startClock('clockOttawa', {
+      	startTime: <%= timeOttawa.seconds_since_midnight.ceil %>,
+      	tz: 0
+      });
+    } catch(e) {
+      // in Internet Explorer there is no canvas!
+      document.getElementById('myCanvasContainer').style.display = 'none';
+    }
+
+    try {
+      startClock('clockParis', {
+      	startTime: <%= timeParis.seconds_since_midnight.ceil %>,
+      	tz: 0
+      });
+    } catch(e) {
+      // in Internet Explorer there is no canvas!
+      document.getElementById('myCanvasContainer').style.display = 'none';
+    }
+
+    try {
+      startClock('clockTokyo', {
+      	startTime: <%= timeTokyo.seconds_since_midnight.ceil %>,
+      	tz: 0
+      });
+    } catch(e) {
+      // in Internet Explorer there is no canvas!
+      document.getElementById('myCanvasContainer').style.display = 'none';
+    }
+
+    try {
+      startClock('clockSydney', {
+      	startTime: <%= timeSydney.seconds_since_midnight.ceil %>,
+      	tz: 0
+      });
+    } catch(e) {
+      // in Internet Explorer there is no canvas!
+      document.getElementById('myCanvasContainer').style.display = 'none';
+    }
+  };
+</script>

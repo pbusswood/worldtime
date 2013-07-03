@@ -1,0 +1,11 @@
+body {
+	padding: 0;
+	margin: 0;
+}
+
+.clock {
+	width: 30%;
+	margin: 1.5%;
+	overflow: hidden;
+	float: left;
+}
