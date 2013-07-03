@@ -1,11 +1,341 @@
-body {
+html, body {
 	padding: 0;
 	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	font-family: 'Helvetica Neue', Helvetica, sans-serif;
+	background-color: #222;
 }
 
 .clock {
 	width: 30%;
-	margin: 1.5%;
+	padding: 1.5%;
 	overflow: hidden;
 	float: left;
+	text-align: center;
+	background-color: #fff;
+}
+
+/*.clock#honolulu {
+	background-color: #bcd85f;
+}
+
+.clock#vancouver {
+	background-color: #4cc4cf;
+}
+
+.clock#ottawa {
+	background-color: #56a8dd;
+}
+
+.clock#rio {
+	background-color: #9b75b4;
+}
+
+.clock#paris {
+	background-color: #e78025;
+}
+
+.clock#cairo {
+	background-color: #e3595c;
+}
+
+.clock#tokyo {
+	background-color: #d35873;
+}
+
+.clock#sydney {
+	background-color: #e78025;
+}*/
+
+.clock p {
+	margin: 0.5em 0;
+	font-size: 1.5em;
+	font-weight: 700;
+}
+
+.clock span {
+	display: block;
+	font-size: 0.8em;
+	font-weight: 300;
+}
+
+.full-clock, .noblur {
+	width: 100%;
+	height: 100%;
+	margin-bottom: 150px;
+	text-align: center;
+	position: absolute;
+	top: 0;
+	bottom: 150px;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+}
+
+.noblur {
+	z-index: 1001;
+	opacity: 0;
+}
+
+.full-clock#honolulu {
+	background: #666 url('/assets/honolulu.jpg') center center no-repeat;
+	background-size: cover;
+}
+
+.full-clock#honolulu .noblur {
+	background: #666 url('/assets/honolulu-noblur.jpg') center center no-repeat;
+	background-size: cover;
+}
+
+.full-clock#vancouver {
+	background: #666 url('/assets/vancouver.jpg') center center no-repeat;
+	background-size: cover;
+}
+
+.full-clock#vancouver .noblur {
+	background: #666 url('/assets/vancouver-noblur.jpg') center center no-repeat;
+	background-size: cover;
+}
+
+.full-clock#ottawa {
+	background: #666 url('/assets/ottawa.jpg') center center no-repeat;
+	background-size: cover;
+}
+
+.full-clock#ottawa .noblur {
+	background: #666 url('/assets/ottawa-noblur.jpg') center center no-repeat;
+	background-size: cover;
+}
+
+.full-clock#rio {
+	background: #666 url('/assets/rio.jpg') center center no-repeat;
+	background-size: cover;
+}
+
+.full-clock#rio .noblur {
+	background: #666 url('/assets/rio-noblur.jpg') center center no-repeat;
+	background-size: cover;
+}
+
+.full-clock#paris {
+	background: #666 url('/assets/paris.jpg') center center no-repeat;
+	background-size: cover;
+}
+
+.full-clock#paris .noblur {
+	background: #666 url('/assets/paris-noblur.jpg') center center no-repeat;
+	background-size: cover;
+}
+
+.full-clock#cairo {
+	background: #666 url('/assets/cairo.jpg') center center no-repeat;
+	background-size: cover;
+}
+
+.full-clock#cairo .noblur {
+	background: #666 url('/assets/cairo-noblur.jpg') center center no-repeat;
+	background-size: cover;
+}
+
+.full-clock#tokyo {
+	background: #666 url('/assets/tokyo.jpg') center center no-repeat;
+	background-size: cover;
+}
+
+.full-clock#tokyo .noblur {
+	background: #666 url('/assets/tokyo-noblur.jpg') center center no-repeat;
+	background-size: cover;
+}
+
+.full-clock#sydney {
+	background: #666 url('/assets/sydney.jpg') center center no-repeat;
+	background-size: cover;
+}
+
+.full-clock#sydney .noblur {
+	background: #666 url('/assets/sydney-noblur.jpg') center center no-repeat;
+	background-size: cover;
+}
+
+.full-clock canvas {
+	margin-top: 45px;
+	width: 300px;
+	height: 300px;
+}
+
+.full-clock p {
+	margin: 0.5em 0;
+	font-size: 4em;
+	font-weight: 100;
+	color: white;
+}
+
+.full-clock span {
+	display: block;
+	font-size: 0.8em;
+	font-weight: 100;
+}
+
+nav {
+	width: 100%;
+	height: 120px;
+	position: fixed;
+	bottom: 0;
+	display: block;
+	clear: both;
+	background-color: #222;
+	z-index: 5000;
+}
+
+nav ul {
+	margin: 0;
+	margin-left: 10px;
+	padding: 0;
+	list-style-type: none;
+}
+
+nav ul li {
+	width: 80px;
+	height: 56px;
+	margin: 20px 10px;
+	border: solid 1px white;
+	float: left;
+	text-transform: uppercase;
+	color: white;
+	text-align: center;
+	font-size: 1.7em;
+	font-weight: 100;
+	vertical-align: middle;
+	padding-top: 24px;
+	text-align: center;
+}
+
+nav ul li:hover {
+	background-color: #000;
+}
+
+@media (min-width: 1200px) {
+	.clock {
+	    width: 23%;
+	    padding: 1%;
+	}
+
+	nav {
+		height: 150px;
+	}
+
+	nav ul li {
+		width: 100px;
+		height: 70px;
+		margin: 25px 12px;
+		padding-top: 30px;
+		font-size: 2em;
+	}
+
+	.full-clock canvas {
+		margin-top: 45px;
+	}
+}
+
+@media (max-width: 830px) {
+	.clock {
+	    width: 45%;
+	    padding: 2.5%;
+	}
+
+	nav {
+		height: 100px;
+	}
+
+	nav ul li {
+		width: 70px;
+		height: 50px;
+		margin: 15px 7px;
+		padding-top: 20px;
+		font-size: 1.4em;
+	}
+}
+
+@media (max-width: 480px) {
+	.clock {
+	    width: 95%;
+	    padding: 2.5%;
+	}
+
+	nav {
+		height: 200px;
+	}
+
+	nav ul li {
+		width: 70px;
+		height: 50px;
+		margin: 15px 7px;
+		padding-top: 20px;
+		font-size: 1.4em;
+	}
+
+	.full-clock canvas {
+		width: 250px;
+		height: 250px;
+	}
+}
+
+@media (max-height: 720px) {
+	.full-clock canvas {
+		width: 250px;
+		height: 250px;
+	}
+
+	.full-clock p {
+		margin: 0.4em 0;
+		font-size: 3.5em;
+		font-weight: 100;
+		color: white;
+	}
+}
+
+@media (max-height: 630px) {
+	.full-clock canvas {
+		width: 200px;
+		height: 200px;
+	}
+
+	.full-clock p {
+		margin: 0.3em 0;
+		font-size: 3em;
+		font-weight: 100;
+		color: white;
+	}
+}
+
+@media (max-height: 540px) {
+	.full-clock canvas {
+		width: 200px;
+		height: 200px;
+		float: left;
+		margin-left: 35%;
+	}
+
+	.full-clock p {
+		float: left;
+		margin: 90px 0 0 30px;
+	}
+}
+
+@media (max-height: 400px) {
+	.full-clock canvas {
+		width: 150px;
+		height: 150px;
+		float: left;
+		margin-left: 37%;
+	}
+
+	.full-clock p {
+		float: left;
+		margin: 65px 0 0 30px;
+	}
 }
