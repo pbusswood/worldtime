@@ -19,38 +19,6 @@ body {
 	background-color: #fff;
 }
 
-/*.clock#honolulu {
-	background-color: #bcd85f;
-}
-
-.clock#vancouver {
-	background-color: #4cc4cf;
-}
-
-.clock#ottawa {
-	background-color: #56a8dd;
-}
-
-.clock#rio {
-	background-color: #9b75b4;
-}
-
-.clock#paris {
-	background-color: #e78025;
-}
-
-.clock#cairo {
-	background-color: #e3595c;
-}
-
-.clock#tokyo {
-	background-color: #d35873;
-}
-
-.clock#sydney {
-	background-color: #e78025;
-}*/
-
 .clock p {
 	margin: 0.5em 0;
 	font-size: 1.5em;
